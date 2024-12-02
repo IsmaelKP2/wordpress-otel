@@ -1,0 +1,43 @@
+receivers:
+  otlp:
+    protocols:
+      http:
+        endpoint: 0.0.0.0:4318
+      grpc:
+        endpoint: 0.0.0.0:4317
+
+processors:
+  batch:
+
+  memory_limiter:
+    check_interval: 1s
+    limit_percentage: 65
+    spike_limit_percentage: 20
+
+# Alternatively, add additional exporters for the backend of your choice and update the
+# pipelines below
+exporters:
+
+  sapm:
+    access_token: "7UJVg1u8H_VidUkksxyJKQ" # ${SPLUNK_ACCESS_TOKEN}
+    endpoint: "https://ingest.us1.signalfx.com/v2/trace" # "https://ingest.${REALM}.signalfx.com/v2/trace"
+  signalfx:
+    access_token: "7UJVg1u8H_VidUkksxyJKQ" # ${SPLUNK_ACCESS_TOKEN}
+    api_url: https://api.us1.signalfx.com #  https://api.${REALM}.signalfx.com
+    correlation: null
+    ingest_url: https://ingest.us1.signalfx.com #  https://ingest.${REALM}.signalfx.com
+    sync_host_metadata: true
+
+
+  
+service:
+  pipelines:
+    metrics:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [signalfx]
+
+    traces:
+      receivers: [otlp]
+      processors: [memory_limiter, batch]
+      exporters: [sapm]

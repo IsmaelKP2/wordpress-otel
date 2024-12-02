@@ -1,0 +1,21 @@
+vendor/
+composer.lock
+
+# Laravel specific
+.env
+.phpunit.result.cache
+/storage/*.key
+/public/storage
+/storage/logs
+/storage/framework/cache/data
+/storage/framework/sessions
+/storage/framework/testing
+/storage/framework/views
+
+# Ignore IDE specific files
+/.idea
+/.vscode
+
+# Ignore OS specific files
+.DS_Store
+Thumbs.db
