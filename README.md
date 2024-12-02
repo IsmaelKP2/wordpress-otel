@@ -9,7 +9,7 @@
 
 #### Edit the otel-collector-config.yaml file
 
-L22 to 28 replace `"${SPLUNK_ACCESS_TOKEN}"` with the value of the token (e.g `"0000000000000"`)
+L22 to 28 replace `"${SPLUNK_ACCESS_TOKEN}"` with the value of the token (e.g `"0000000000000"`)  
 L22 to 28 replace `"${REALM}"` with the value of the token (e.g `"eu0"`)
 
 #### In a shell, run:
