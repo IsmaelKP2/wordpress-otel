@@ -19,13 +19,13 @@ processors:
 exporters:
 
   sapm:
-    access_token: "7UJVg1u8H_VidUkksxyJKQ" # ${SPLUNK_ACCESS_TOKEN}
-    endpoint: "https://ingest.us1.signalfx.com/v2/trace" # "https://ingest.${REALM}.signalfx.com/v2/trace"
+    access_token: "${SPLUNK_ACCESS_TOKEN}"
+    endpoint: "https://ingest.${REALM}.signalfx.com/v2/trace"
   signalfx:
-    access_token: "7UJVg1u8H_VidUkksxyJKQ" # ${SPLUNK_ACCESS_TOKEN}
-    api_url: https://api.us1.signalfx.com #  https://api.${REALM}.signalfx.com
+    access_token: "${SPLUNK_ACCESS_TOKEN}"
+    api_url: "https://api.${REALM}.signalfx.com"
     correlation: null
-    ingest_url: https://ingest.us1.signalfx.com #  https://ingest.${REALM}.signalfx.com
+    ingest_url: "https://ingest.${REALM}.signalfx.com"
     sync_host_metadata: true
 
 
