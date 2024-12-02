@@ -48,6 +48,6 @@ Wordpress image and configure it into the image's PHP installation (see
 
 has a `auto_prepend_file=/var/www/otel/autoload.php` clause so that OTel is loaded into Wordpress sources at runtime.
 
-The example has Wordpress send OTLP -> [OpenTelemetry
+In this example Wordpress send OTLP -> [OpenTelemetry
 Collector](https://opentelemetry.io/docs/collector/) -> [Splunk Observability Cloud](https://docs.splunk.com/observability/en/get-started/get-started.html). 
 
